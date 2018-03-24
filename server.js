@@ -10,6 +10,10 @@ app.get('/', (req, res) => {
     res.sendfile('home.html');
 });
 
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}`);
+});
+
 
 
 
