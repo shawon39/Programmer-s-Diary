@@ -1,12 +1,15 @@
 const express = require('express');
 const fs = require('fs');
 var pg = require('pg');
+
 var app = express();
 
 // Database Connection !
 var conString = "postgres://postgres:sh56348635@localhost:5432/PDiary";
 var client = new pg.Client(conString);
 client.connect();
+
+// For testing
 
 client.query('SELECT * from test', (err, res) => {
   if (err) {
@@ -16,8 +19,9 @@ client.query('SELECT * from test', (err, res) => {
   }
 });
 
+// End testing
+
 const port = process.env.PORT || 3000;
-var app = express();
 
 app.use(express.static(__dirname + '/'));
 

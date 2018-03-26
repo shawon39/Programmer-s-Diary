@@ -6,6 +6,15 @@ body {
     overflow-x: hidden;
 }
 
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    border-radius: 20%;
+    opacity: 0.5;
+}
+
 #main-section {
     margin-top: 50px;
 }
@@ -25,17 +34,19 @@ body {
     margin-top: 100px;
     color: #162c30;
     font-style: italic;
-    width: 90%;
-    margin-left: 75px;
+    /*margin-left: 75px;*/
     font-family: cursive;
     font-size: 35px;
     font-weight:bold;
+    margin-bottom: 50px;
 }
 
 .main-container {
     opacity: .9;
     height: 800px;
-    padding: 50px;
+    background-color: #3E3B36;
+    padding-bottom: 50px;
+    border-radius: 5px;
 }
 
 .online-judge {
@@ -59,21 +70,21 @@ body {
 }
 
 .right-side-1 {
-    height: 285px;
+    height: 350px;
     background-color: #353634;
     border-radius: 5px;
 }
 
 .right-side-2 {
-    height: 460px;
+    height: 395px;
     background-color: #353634;
     margin-top: 10px;
     border-radius: 5px;
 }
 
 .right-side-1-search {
-    width: 60%;
-    margin-left: 100px;
+    width: 100%;
+    /*margin-left: 100px;*/
     padding-top: 30px;
     margin-top: 5px;
     padding-top: 10px;
@@ -121,6 +132,45 @@ li {
 
 #main-section .badge {
     background-color: #286090;
+}
+
+/* MEDIA Query */
+
+@media only screen and (max-width: 1200px) and (min-width: 991px)  {
+    .coding-gif {
+        width: 535px;
+        height: 250px;
+        border-radius: 5px;
+    }
+}
+
+@media only screen and (max-width: 991px) and (min-width: 768px)  {
+    .coding-gif {
+        width: 407px;
+        height: 250px;
+        border-radius: 5px;
+    }
+}
+
+@media only screen and (max-width: 768px)  {
+    .coding-gif {
+        width: 100%;
+        height: 250px;
+        border-radius: 5px;
+    }
+    #main-section .header-text {
+        color: #d1d1d1;
+    }
+    .footer1  {
+        margin-top: 800px;
+    }
+    div .right-side-input {
+        margin-top: 15px;
+    }
+    .right-side-2  {
+        padding-top: 10px;
+        margin-top: 20px;
+    }
 }
 
 /*FOOTER 1*/
