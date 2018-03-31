@@ -1,11 +1,16 @@
 const express = require('express');
 const fs = require('fs');
-const pg = require('pg');
+//const pg = require('pg');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cons = require('consolidate');
 const dust = require('dustjs-helpers');
 const app = express();
+
+// Hehe
+const {
+    Client
+} = require('pg');
 
 const port = process.env.PORT || 3000;
 
@@ -25,13 +30,15 @@ app.use(express.static(path.join(__dirname + '/public')));
 
 // Body-Parser Middleware
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 
 
 // My practice code Area
-
-var client = new pg.Client(conString);
-client.connect();
+// Blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+//  var client = new pg.Client(conString);
+//  client.connect();
 //
 // // For testing
 // client.query('SELECT * from test', (err, res) => {
@@ -44,6 +51,8 @@ client.connect();
 
 // End My code
 
+// Blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+/*
 app.get('/timeline', (req, res) => {
 
     client.query('SELECT * from test', (err, result) => {
@@ -54,8 +63,28 @@ app.get('/timeline', (req, res) => {
     });
 
 });
+*/
+
+app.get('/timeline', (req, res) => {
+
+    const client = new Client(conString);
+    client.connect();
+
+    client.query('SELECT * from test', (err, result) => {
+        if (err) {
+            return console.error('error running query', err);
+        } else {
+            res.render('timeline-Index', {
+                test: result.rows
+            });
+        }
+        client.end();
+    });
+
+});
 
 
+//////////////
 
 app.get('/', (req, res) => {
     res.render('home');
@@ -82,18 +111,18 @@ app.listen(port, () => {
 // });
 
 
+/*
 
+const { Client } = require('pg')
+const client = new Client()
 
+await client.connect()
 
+const res = await client.query('SELECT $1::text as message', ['Hello world!'])
+console.log(res.rows[0].message) // Hello world!
+await client.end()
 
-
-
-
-
-
-
-
-
+*/
 
 
 
