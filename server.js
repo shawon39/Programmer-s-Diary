@@ -12,11 +12,10 @@ const {
     Client
 } = require('pg');
 
-const port = process.env.PORT || 3000;
-
 
 // Database Connect string !
-var conString = "postgres://postgres:sh56348635@localhost:5432/PDiary";
+const ENV = process.env.DATABASE_URL;
+var conString = ENV || "postgres://postgres:sh56348635@localhost:5432/PDiary";
 
 // Assign dust engine to .dust files
 app.engine('dust', cons.dust);
@@ -36,20 +35,11 @@ app.use(bodyParser.urlencoded({
 
 
 // My practice code Area
+
 // Blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 //  var client = new pg.Client(conString);
 //  client.connect();
-//
-// // For testing
-// client.query('SELECT * from test', (err, res) => {
-//   if (err) {
-//     console.log(err.stack);
-//   } else {
-//     console.log(res.rows[0].name);
-//   }
-// });
 
-// End My code
 
 // Blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 /*
@@ -101,7 +91,7 @@ app.get('/tutorials', (req, res) => {
 app.get('/signUp', (req, res) => {
     res.render('signUp');
 });
-
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Server is up on port ${port}`);
 });
