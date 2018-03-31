@@ -60,7 +60,7 @@ app.get('/timeline', (req, res) => {
     const client = new Client(conString);
     client.connect();
 
-    client.query('SELECT * from test', (err, result) => {
+    client.query('SELECT * from company', (err, result) => {
         if (err) {
             return console.error('error running query', err);
         } else {
