@@ -7,11 +7,11 @@ const cons = require('consolidate');
 const dust = require('dustjs-helpers');
 const app = express();
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 37160;
 
 
 // Database Connect string !
-var conString = "postgres://postgres:sh56348635@localhost/PDiary";
+var conString = "postgres://postgres:sh56348635@localhost:5432/PDiary";
 
 // Assign dust engine to .dust files
 app.engine('dust', cons.dust);
