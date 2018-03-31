@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000;
 
 
 // Database Connect string !
-var conString = "postgres://postgres:sh56348635@db:5432/PDiary";
+var conString = "postgres://postgres:sh56348635@localhost:5432/PDiary";
 
 // Assign dust engine to .dust files
 app.engine('dust', cons.dust);
@@ -51,7 +51,6 @@ app.get('/timeline', (req, res) => {
         return console.error('error running query', err);
       }
       res.render('timeline-Index', {test: result.rows});
-      client.end();
     });
 
 });
@@ -77,6 +76,10 @@ app.get('/signUp', (req, res) => {
 app.listen(port, () => {
     console.log(`Server is up on port ${port}`);
 });
+
+// app.listen(process.env.PORT, '0.0.0.0', function(err) {
+//   console.log("Started listening on %s", app.url);
+// });
 
 
 
