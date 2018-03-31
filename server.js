@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000;
 
 
 // Database Connect string !
-var conString = "postgres://postgres:sh56348635@localhost:5432/PDiary";
+var conString = "postgres://postgres:sh56348635@localhost/PDiary";
 
 // Assign dust engine to .dust files
 app.engine('dust', cons.dust);
