@@ -1,14 +1,16 @@
 {>"timeline" /}
 
 <style>
-
+h4 {
+    color: #ddd;
+}
 </style>
 
 {<body}
 
     {#test}
         <div class="container">
-            
+            <h4> {name} </h4>
         </div>
     {/test}
 

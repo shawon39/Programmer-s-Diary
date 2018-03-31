@@ -51,7 +51,7 @@ app.get('/timeline', (req, res) => {
         return console.error('error running query', err);
       }
       res.render('timeline-Index', {test: result.rows});
-      //client.end();
+      client.end();
     });
 
 });
