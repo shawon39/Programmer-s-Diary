@@ -7,11 +7,11 @@ const cons = require('consolidate');
 const dust = require('dustjs-helpers');
 const app = express();
 
-const port = process.env.PORT || 37160;
+const port = process.env.PORT || 3000;
 
 
 // Database Connect string !
-var conString = "postgres://postgres:sh56348635@localhost:5432/PDiary";
+var conString = "postgres://postgres:sh56348635@db:5432/PDiary";
 
 // Assign dust engine to .dust files
 app.engine('dust', cons.dust);
@@ -51,7 +51,7 @@ app.get('/timeline', (req, res) => {
         return console.error('error running query', err);
       }
       res.render('timeline-Index', {test: result.rows});
-      //client.end();
+      client.end();
     });
 
 });
