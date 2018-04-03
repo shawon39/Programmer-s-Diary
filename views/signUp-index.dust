@@ -1,0 +1,21 @@
+{>"signUp" /}
+
+<style>
+    .title {
+        color: #FFF;
+        font-size: 35px;
+        font-family: serif;
+        opacity: 0.8;
+    }
+</style>
+
+{<titleShow}
+
+    <h1 class="title"> {title}  </h1>
+
+{/titleShow}
+
+{<errorShow}
+
+
+{/errorShow}
