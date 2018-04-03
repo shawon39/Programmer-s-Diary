@@ -1,0 +1,17 @@
+{>"codeforce" /}
+
+<style>
+
+</style>
+
+{<body}
+
+    <h1 class="title"> {error}  </h1>
+    {#data}
+        <div>
+            <li class="list-group-item justify-content-between codeforces" > {pblm_no}  ---  {pblm_name} </li>
+        </div>
+
+    {/data}
+
+{/body}

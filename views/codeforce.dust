@@ -50,7 +50,7 @@
     <section id="main-section">
 
         <h1 class="text-center header-text"> PROGRAMMER'S TIMELINE </h1>
-        <img src="image/coding.gif">
+        <!-- <img src="image/coding.gif"> -->
 
         <div class="container main-container">
 
@@ -62,59 +62,10 @@
                         <input class="form-control" type="text" placeholder="Search" aria-label="Search">
                     </div> -->
 
-
                     <img class="coding-gif" src="image/cover3.png" />
 
                     <ul class="list-group online-judge">
-                        <li id="codeforces" class="list-group-item justify-content-between codeforce">
-                            <a href="codeforce">Codeforces</a>
-
-                            <span class="badge badge-default badge-pill">14</span>
-                        </li>
-                        <li class="list-group-item justify-content-between uri">
-                            URI Online Judge
-                            <span class="badge badge-default badge-pill">21</span>
-                        </li>
-                        <li class="list-group-item justify-content-between uva">
-                            UVA Online Judge
-                            <span class="badge badge-default badge-pill">12</span>
-                        </li>
-                        <li class="list-group-item justify-content-between lightoj">
-                            Light Online Judge
-                            <span class="badge badge-default badge-pill">13</span>
-                        </li>
-                        <li class="list-group-item justify-content-between acm">
-                            ACM Live Archive
-                            <span class="badge badge-default badge-pill">19</span>
-                        </li>
-                        <li class="list-group-item justify-content-between codechef">
-                            CodeChef
-                            <span class="badge badge-default badge-pill">31</span>
-                        </li>
-                        <li class="list-group-item justify-content-between googlejam">
-                            Google Code Jam
-                            <span class="badge badge-default badge-pill">61</span>
-                        </li>
-                        <li class="list-group-item justify-content-between topcoder">
-                            TopCoder
-                            <span class="badge badge-default badge-pill">21</span>
-                        </li>
-                        <li class="list-group-item justify-content-between timues">
-                            Timues Online Judge
-                            <span class="badge badge-default badge-pill">16</span>
-                        </li>
-                        <li class="list-group-item justify-content-between spoj">
-                            SPOJ
-                            <span class="badge badge-default badge-pill">41</span>
-                        </li>
-                        <li class="list-group-item justify-content-between hackerrank">
-                            HackerRank
-                            <span class="badge badge-default badge-pill">24</span>
-                        </li>
-                        <li class="list-group-item justify-content-between leetcode">
-                            LeetCode
-                            <span class="badge badge-default badge-pill">23</span>
-                        </li>
+                        {+body /}
                     </ul>
 
                 </div>

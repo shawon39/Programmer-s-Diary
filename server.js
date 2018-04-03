@@ -8,7 +8,13 @@ const cons = require('consolidate');
 const dust = require('dustjs-helpers');
 const app = express();
 
-const { Client } = require('pg');
+// const main = require('./public/js/main');
+//
+// main.hello();
+
+const {
+    Client
+} = require('pg');
 
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
@@ -41,16 +47,19 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
 }));
-const { check, validationResult } = require('express-validator/check');
+const {
+    check,
+    validationResult
+} = require('express-validator/check');
 
 app.use(session({
-  secret: 'dfsgsdfgdsfgf',
-  resave: false,
-  store: new pgSession({
-        conString :ENV || "postgres://postgres:sh56348635@localhost:5432/PDiary",
-     }),
-  saveUninitialized: false,
-  //cookie: { secure: true }
+    secret: 'dfsgsdfgdsfgf',
+    resave: false,
+    store: new pgSession({
+        conString: ENV || "postgres://postgres:sh56348635@localhost:5432/PDiary",
+    }),
+    saveUninitialized: false,
+    //cookie: { secure: true }
 }));
 
 app.use(passport.initialize());
@@ -59,38 +68,42 @@ app.use(passport.session());
 //  var client = new pg.Client(conString);
 //  client.connect();
 
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
     res.locals.isAuthenticated = req.isAuthenticated();
     next();
 })
 
-passport.use(new LocalStrategy (
-  function(username, password, done) {
-      console.log(username);
-      console.log(password);
+passport.use(new LocalStrategy(
+    function(username, password, done) {
+        console.log(username);
+        console.log(password);
 
-      const client = new Client(conString);
-      client.connect();
+        const client = new Client(conString);
+        client.connect();
 
-      //client.query("SELECT passwords from users WHERE username = '{$username}'", (err, results) => {
-      client.query("SELECT passwords, id from users where username = $1",[username], (err, results) => {
-          if (err) {done(err);}
+        //client.query("SELECT passwords from users WHERE username = '{$username}'", (err, results) => {
+        client.query("SELECT passwords, id from users where username = $1", [username], (err, results) => {
+            if (err) {
+                done(err);
+            }
 
-          if(results.rows.length === 0) {
-              done(null, false);
-          } else {
+            if (results.rows.length === 0) {
+                done(null, false);
+            } else {
 
-              var hash =  results.rows[0].passwords.toString();
-              bcrypt.compare(password, hash, function(err, res) {
-                  if(res === true) {
-                      return done(null, {user_id: results.rows[0].id});
-                  } else {
-                      return done(null, false);
-                  }
-              });
-          }
-      });
-  }
+                var hash = results.rows[0].passwords.toString();
+                bcrypt.compare(password, hash, function(err, res) {
+                    if (res === true) {
+                        return done(null, {
+                            user_id: results.rows[0].id
+                        });
+                    } else {
+                        return done(null, false);
+                    }
+                });
+            }
+        });
+    }
 ));
 
 app.get('/timeline', authenticationMiddleware(), (req, res) => {
@@ -115,7 +128,7 @@ app.post('/login', passport.authenticate('local', {
     failureRedirect: '/signUp'
 }));
 
-app.get('/logout',(req, res) => {
+app.get('/logout', (req, res) => {
     req.logout();
     req.session.destroy();
     res.redirect('/signUp');
@@ -124,9 +137,13 @@ app.get('/logout',(req, res) => {
 
 app.post('/register', [
 
-    check('password', 'passwords must be at least 6 chars long and contain one number').isLength({min: 6}),
-    check('rePassword').custom((value, {req}) => {
-        if(value != req.body.password) {
+    check('password', 'passwords must be at least 6 chars long and contain one number').isLength({
+        min: 6
+    }),
+    check('rePassword').custom((value, {
+        req
+    }) => {
+        if (value != req.body.password) {
             throw new Error("Password Does Not Matched!");
         } else {
             return true;
@@ -166,7 +183,7 @@ app.post('/register', [
                 } else {
 
                     client.query('SELECT lastval() as user_id', function(error, result) {
-                        if(error) throw error;
+                        if (error) throw error;
 
                         console.log(result.rows[0].user_id);
                         console.log(result);
@@ -190,7 +207,7 @@ app.post('/register', [
 });
 
 passport.serializeUser(function(user_id, done) {
-  done(null, user_id);
+    done(null, user_id);
 });
 
 passport.deserializeUser(function(user_id, done) {
@@ -198,14 +215,13 @@ passport.deserializeUser(function(user_id, done) {
 });
 
 function authenticationMiddleware() {
-  return function (req, res, next) {
-    console.log(`req.session.passport.user: ${JSON.stringify(req.session.passport)}`);
-
-    if (req.isAuthenticated()) {
-      return next()
+    return function(req, res, next) {
+        console.log(`req.session.passport.user: ${JSON.stringify(req.session.passport)}`);
+        if (req.isAuthenticated()) {
+            return next()
+        }
+        res.redirect('/signUp');
     }
-    res.redirect('/signUp');
-  }
 }
 
 
@@ -226,6 +242,36 @@ app.get('/tutorials', (req, res) => {
 app.get('/signUp', (req, res) => {
     res.render('signUp');
 });
+
+/////// online Judge
+
+app.get('/codeforce', (req, res) => {
+
+    const client = new Client(conString);
+    client.connect();
+
+    client.query("select user_id, pblm_no, pblm_name, id_no, code from users, online_judge where id_no = user_id", (err, results) => {
+        if (err) {
+            console.log(err);
+            res.render('codeforce', {
+                error: 'Something Wrong'
+            });
+        } else {
+
+            //console.log(results);
+
+            // const pblm_no = results.rows[0].pblm_no;
+            // const pblm_name = results.rows[0].pblm_name;
+            // const code = results.rows[0].code;
+
+            res.render('codeforce-index', {
+                data: results.rows
+            });
+        }
+    });
+});
+
+
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Server is up on port ${port}`);
