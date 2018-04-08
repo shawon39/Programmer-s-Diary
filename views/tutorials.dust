@@ -53,8 +53,19 @@
     <section id="main-section">
 
     <div class="container heading-tutorials">
-        <h1 class="text-center header-text"> TUTORIALS </h1>
-        <!-- <img class="home-cover" src="image/homeCover.png" /> -->
+        <h1 class=" text-center header-text"> TUTORIALS </h1>
+
+        <h1 class="header-text2">* You need to signup for getting all the opportunity.
+            After login you are able to see your Timeline. So If you are not loged in please go signup option and signup using you all of valuable information. </h1>
+
+        <h1 class="header-text2">* Timeline is most important for you.Because  here you will find all important things.
+             Here you will see all number of problem that you already solved. Which online judge you used,it will be also show. </h1>
+
+        <h1 class="header-text2">* If you get stuck to solve any kind of problem You may find the
+            the solution by using search option.</h1>
+
+        <h1 class="header-text2">* In To-Do List, you can save your schedule, delete your schedule when it will be finished </h1>
+
     </div>
 
     </section>
@@ -99,9 +110,14 @@
             <div class="pull-right">
                 <ul>
                     <li><a href="home">Home</a></li>
-                    <li><a href="timeline">Timeline</a></li>
                     <li><a href="tutorials">Tutorials</a></li>
-                    <li><a href="signUp">Login / Sign Up</a></li>
+
+                    {@eq key=isAuthenticated value="true" type="Boolean" }
+                        <li><a href="timeline">Timeline</a></li>
+                        <li><a href="logout">Logout</a></li>
+                    {:else}
+                        <li><a href="signUp">Login / Sign Up</a></li>
+                    {/eq}
                 </ul>
             </div>
         </div>

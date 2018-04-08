@@ -50,7 +50,9 @@
     <section id="main-section">
 
         <h1 class="text-center header-text"> PROGRAMMER'S TIMELINE </h1>
-        <img src="image/coding.gif">
+
+
+        <!-- <img src="image/coding.gif"> -->
 
         <div class="container main-container">
 
@@ -65,55 +67,76 @@
 
                     <img class="coding-gif" src="image/cover3.png" />
 
+                    <!-- Start Modal  -->
+                    {+body /}
+
+                    <button type="button" class="btn btn-default btn-addSolution" data-toggle="modal" data-target="#formModal">
+                        Add Solution
+                    </button>
+
+
+                    <!--  End Modal -->
+
                     <ul class="list-group online-judge">
-                        <li id="codeforces" class="list-group-item justify-content-between codeforce">
+                        <li class="list-group-item justify-content-between codeforce">
                             <a href="codeforce">Codeforces</a>
 
-                            <span class="badge badge-default badge-pill">14</span>
+                            <!-- <span class="badge badge-default badge-pill">14</span> -->
                         </li>
                         <li class="list-group-item justify-content-between uri">
-                            URI Online Judge
-                            <span class="badge badge-default badge-pill">21</span>
+
+                            <a href="uri">URI Online Judge</a>
+                            <!-- <span class="badge badge-default badge-pill">21</span> -->
                         </li>
                         <li class="list-group-item justify-content-between uva">
-                            UVA Online Judge
-                            <span class="badge badge-default badge-pill">12</span>
+
+                            <a href="uva">UVA Online Judge</a>
+                            <!-- <span class="badge badge-default badge-pill">12</span> -->
                         </li>
                         <li class="list-group-item justify-content-between lightoj">
-                            Light Online Judge
-                            <span class="badge badge-default badge-pill">13</span>
+
+                            <a href="lightoj">Light Online Judge</a>
+                            <!-- <span class="badge badge-default badge-pill">13</span> -->
                         </li>
                         <li class="list-group-item justify-content-between acm">
-                            ACM Live Archive
-                            <span class="badge badge-default badge-pill">19</span>
+
+                            <a href="acm">ACM Live Archive</a>
+                            <!-- <span class="badge badge-default badge-pill">19</span> -->
                         </li>
                         <li class="list-group-item justify-content-between codechef">
-                            CodeChef
-                            <span class="badge badge-default badge-pill">31</span>
+
+                            <a href="codechef">CodeChef</a>
+                            <!-- <span class="badge badge-default badge-pill">31</span> -->
                         </li>
                         <li class="list-group-item justify-content-between googlejam">
-                            Google Code Jam
-                            <span class="badge badge-default badge-pill">61</span>
+
+                            <a href="googlejam">Google Code Jam</a>
+                            <!-- <span class="badge badge-default badge-pill">61</span> -->
                         </li>
                         <li class="list-group-item justify-content-between topcoder">
-                            TopCoder
-                            <span class="badge badge-default badge-pill">21</span>
+
+                            <a href="topcoder">TopCoder</a>
+                            <!-- <span class="badge badge-default badge-pill">21</span> -->
                         </li>
                         <li class="list-group-item justify-content-between timues">
-                            Timues Online Judge
-                            <span class="badge badge-default badge-pill">16</span>
+
+                            <a href="timues">Timues Online Judge</a>
+                            <!-- <span class="badge badge-default badge-pill">16</span> -->
                         </li>
                         <li class="list-group-item justify-content-between spoj">
-                            SPOJ
-                            <span class="badge badge-default badge-pill">41</span>
+
+                            <a href="spoj">SPOJ</a>
+                            <!-- <span class="badge badge-default badge-pill">41</span> -->
                         </li>
                         <li class="list-group-item justify-content-between hackerrank">
-                            HackerRank
-                            <span class="badge badge-default badge-pill">24</span>
+
+                            <a href="hackerrank">HackerRank</a>
+                            <!-- <span class="badge badge-default badge-pill">24</span> -->
                         </li>
                         <li class="list-group-item justify-content-between leetcode">
-                            LeetCode
-                            <span class="badge badge-default badge-pill">23</span>
+
+                            <a href="leetcode">LeetCode</a>
+                            <!-- <span class="badge badge-default badge-pill">23</span> -->
                         </li>
                     </ul>
 
@@ -124,13 +147,33 @@
                         <div class="col-sm-12 col-md-12 right-side-1">
 
                             <div class="right-side-1-search">
-                                <input class="form-control right-side-input" type="text" placeholder="Search problem's Solution">
+                                <!-- <input class="form-control right-side-input" type="text" placeholder="Search problem's Solution"> -->
+
+                                 <form method="post" action="/search">
+
+                                      <div class="form-group">
+                                        <label for="SearchProblem">Search Problem</label>
+                                            <input type="number" class="form-control right-side-input" name="pblm_id_no" placeholder="Search problem's Solution">
+                                      </div>
+                                     <button type="submit" class="btn btn-primary pull-right">Search</button>
+                                     <div class="search_pblmm">
+                                          {+Search /}
+                                     </div>
+                                 </form>
+
                             </div>
 
                         </div>
                         <div class="col-sm-12 col-md-12 right-side-2">
 
-                            <p class="to-do">TO-Do List</p>
+                            <p class="to-do">TO-Do List
+                                <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#formModalToDo">
+                                    Add Item
+                                </button>
+                             </p>
+                             <div class="todo_limit">
+                                  {+todo /}
+                             </div>
 
                         </div>
                     </div>
@@ -141,6 +184,107 @@
         </div>
 
     </section>
+
+
+    <!-- Add Modal -->
+
+    <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form class="" action="/addSolution" method="post">
+
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Add Solution</h4>
+                  </div>
+                  <div class="modal-body">
+
+                     <div class="form-group">
+                         <label>Problem Number</label>
+                         <input type="text" class="form-control" name="pblm_no" placeholder="Enter Problem Number"/>
+                     </div>
+
+                     <div class="form-group">
+                         <label>Problem Name</label>
+                         <input type="text" class="form-control" name="pblm_name" placeholder="Enter Problem Name"/>
+                     </div>
+
+                     <div class="form-group">
+                        <label>Online Judge</label>
+                        <select class="form-control" name="judge">
+
+                              <option > codeforce </option>
+                              <option> uri </option>
+                              <option> uva </option>
+                              <option> lightoj </option>
+                              <option> acm </option>
+                              <option> codechef </option>
+                              <option> googlejam </option>
+                              <option> topcoder </option>
+                              <option> timues </option>
+                              <option> spoj </option>
+                              <option> hackerrank </option>
+                              <option> leetcode </option>
+                        </select>
+                     </div>
+
+                     <div class="form-group">
+                         <label>User Id</label>
+                         <input type="number" class="form-control" name="user_id" placeholder="Enter Your User Id"/>
+                     </div>
+
+                     <div class="form-group">
+                         <label>Solution</label>
+                         <textarea class="form-control" name="code" rows="5" placeholder="Paste The Solution"></textarea>
+                     </div>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                  </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- End Modal -->
+
+    <!-- Add modal for to do -->
+
+        <div class="modal fade" id="formModalToDo" tabindex="-1" role="dialog" aria-labelledby="formModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form class="" action="/TodoItemAdd" method="post">
+
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Add ToDo Item</h4>
+                      </div>
+                      <div class="modal-body">
+
+                         <div class="form-group">
+                             <label>ToDo Name</label>
+                             <input type="text" class="form-control" name="works" placeholder="Enter The ToDo"/>
+                         </div>
+
+                         <div class="form-group">
+                             <label>User Id</label>
+                             <input type="number" class="form-control" name="user_id_no" placeholder="Enter Your User Id"/>
+                         </div>
+
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                      </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- End Modal -->
+
 
 
     <!--FOOTER -->

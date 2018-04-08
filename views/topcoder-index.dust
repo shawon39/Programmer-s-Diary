@@ -1,4 +1,4 @@
-{>"codeforce" /}
+{>"topcoder" /}
 
 <style>
     .cf li button {
@@ -7,7 +7,6 @@
         font-weight: bold;
 
     }
-
     .cf li {
         background: #4f5b66;
         color: #ddd;
@@ -23,10 +22,11 @@
         background: #d1d1d1;
         font-weight: bold;
     }
-
 </style>
 
 {<body} <h1 class="title"> {error} </h1>
+
+
 
     {#data}
     <div class="cf">
@@ -38,6 +38,5 @@
         </div>
     </div>
     {/data}
-
 
 {/body}

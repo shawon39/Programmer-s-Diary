@@ -13,7 +13,7 @@ body {
     font-style: italic;
     background-color: #898c93;
     padding: 45px;
-    opacity: .8;
+    opacity: 0.8;
     border: 1px solid black;
     font-family:cursive;
     font-size: 30px;
@@ -21,9 +21,18 @@ body {
 
 #main-section .heading-tutorials {
     margin-top: 60px;
-    opacity: .8;
+    opacity: 0.92;
     height: 900px;
     background-color: #353634;
+}
+
+.header-text2 {
+    color: black;
+    margin-bottom: 25px;
+    padding: 10px;
+    font-family:Roboto;
+    background-color: #7E7472;
+    font-size: 20px;
 }
 
 

@@ -4,14 +4,112 @@
 h4 {
     color: #ddd;
 }
+
+.alert {
+    background-color: #3E3B36;
+        border: none;
+}
+.alert h4 {
+    color: #ffffff;
+    opacity: 0.8;
+    font-family: Roboto;
+    font-size: 16px;
+}
+.todo-works h4 {
+    background-color: #353634;
+    color: #d1d1d1;
+    opacity: 0.7;
+    border: none;
+    font-size: 14px;
+    font-family:sans-serif;
+}
+.todo-works h4 button {
+    margin-top: -7px;
+    background-color:  #d1d1d1;
+    color: #000;
+    opacity: 0.5;
+}
+.todo-works hr {
+    opacity: 0.3;
+}
+
+.search_pblm  h4 {
+    background-color: #353634;
+    color: #d1d1d1;
+    opacity: 0.7;
+    border: none;
+    font-size: 14px;
+    font-family:sans-serif;
+}
+.search_pblm h4 button {
+    margin-top: -7px;
+    background-color:  #d1d1d1;
+    color: #000;
+    opacity: 0.8;
+}
+.search_pblm hr {
+    opacity: 0.3;
+}
+
+
 </style>
 
 {<body}
 
-    {#test}
-        <div class="container">
-            <h4> {name} </h4>
-        </div>
-    {/test}
+    <!-- <div class="alert">
+        <h4> <strong> Status: </strong> {title} </h4>
+    </div> -->
 
 {/body}
+
+{<todo}
+
+        {#data}
+
+        <div class="todo-works">
+            <h4 class="list-group-item justify-content-between">
+                 {works} <button class="btn btn-default pull-right delete-Todo" data-id="{id}"> X </button>
+            </h4>
+            <hr>
+        </div>
+
+        {/data}
+
+{/todo}
+
+<button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#formModalToDo">
+    Add Item
+</button>
+
+{<Search}
+        {#data2}
+            <div class="search_pblm">
+                <h4 class="list-group-item justify-content-between"> {pblm_no} -- {pblm_name} -- {judge}
+                    <button type="button" class="btn btn-default pull-right"  href="#code_{id}" data-toggle="modal" data-target="#CodeView">
+                          Solution
+                    </button>
+                </h4>
+                <hr>
+            </div>
+        {/data2}
+
+{/Search}
+
+    {#data2}
+        <div class="modal fade" id="CodeView" tabindex="-1" role="dialog" aria-labelledby="formModalLabel">
+          <div class="modal-dialog" role="document">
+         <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add ToDo Item</h4>
+            </div>
+            <div class="modal-body" id="judge_{id}">
+
+                <code><pre> {code}</pre> </code>
+
+            </div>
+        </div>
+      </div>
+    </div>
+    {/data2}

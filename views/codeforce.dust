@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    <title>Timeline</title>
+    <title>codeforce</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="/css/timeline.css">
+    <link rel="stylesheet" type="text/css" href="/css/judge.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -48,49 +48,10 @@
     </section>
 
     <section id="main-section">
-
-        <h1 class="text-center header-text"> PROGRAMMER'S TIMELINE </h1>
-        <!-- <img src="image/coding.gif"> -->
-
+        <h1 class="text-center header-text"> Codeforce Online Judge </h1>
         <div class="container main-container">
-
-            <div class="row">
-                <div class="col-sm-7 col-md-7">
-
-                    <!-- Search form
-                    <div class="left-side-search">
-                        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-                    </div> -->
-
-                    <img class="coding-gif" src="image/cover3.png" />
-
-                    <ul class="list-group online-judge">
-                        {+body /}
-                    </ul>
-
-                </div>
-                <div class="col-sm-5 col-md-5">
-
-                    <div class="row">
-                        <div class="col-sm-12 col-md-12 right-side-1">
-
-                            <div class="right-side-1-search">
-                                <input class="form-control right-side-input" type="text" placeholder="Search problem's Solution">
-                            </div>
-
-                        </div>
-                        <div class="col-sm-12 col-md-12 right-side-2">
-
-                            <p class="to-do">TO-Do List</p>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
+            {+body /}
         </div>
-
     </section>
 
 

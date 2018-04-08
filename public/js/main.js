@@ -1,21 +1,24 @@
 
-// 
-// function hello() {
-//
-//     // $(document).ready(function(){
-//     //
-//     //     console.log('Hello');
-//     //
-//     //     $('.codeforce').on( 'click', function() {
-//     //         console.log('Hello');
-//     //         $(".online-judge").hide();
-//     //     });
-//     // });
-//     console.log('done');
-//
-// }
 
+$(document).ready(function() {
+    $('.delete-Todo').on('click', function() {
+        var id = $(this).data('id');
+        //console.log(id);
+        var url = '/deleteTodo/'+id;
+        //console.log(url);
 
-module.exports = {
-    hello
-};
+        if(confirm('Delete Item ?')) {
+            $.ajax({
+                url: url,
+                type:'DELETE',
+                success: function(result){
+                    console.log('Deleting Item...');
+                    window.location.href='/timeline';
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            });
+        }
+    });
+});

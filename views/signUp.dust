@@ -234,9 +234,14 @@
                 <div class="pull-right">
                     <ul>
                         <li><a href="home">Home</a></li>
-                        <li><a href="timeline">Timeline</a></li>
                         <li><a href="tutorials">Tutorials</a></li>
-                        <li><a href="signUp">Login / Sign Up</a></li>
+
+                        {@eq key=isAuthenticated value="true" type="Boolean" }
+                            <li><a href="timeline">Timeline</a></li>
+                            <li><a href="logout">Logout</a></li>
+                        {:else}
+                            <li><a href="signUp">Login / Sign Up</a></li>
+                        {/eq}
                     </ul>
                 </div>
             </div>
