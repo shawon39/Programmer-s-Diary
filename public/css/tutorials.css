@@ -31,13 +31,15 @@ body {
     margin-bottom: 25px;
     padding: 10px;
     font-family:Roboto;
-    background-color: #7E7472;
-    font-size: 20px;
+    background-color: #797678;
+    line-height: 1.4;
+    font-size: 17px;
+    opacity: 0.9;
 }
 
-
-
-
+.header-text2 span {
+    opacity: 0.1;
+}
 
 
 footer {

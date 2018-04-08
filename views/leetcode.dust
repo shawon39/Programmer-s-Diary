@@ -48,7 +48,7 @@
     </section>
 
     <section id="main-section">
-        <h1 class="text-center header-text"> Hackerrank Online Judge </h1>
+        <h1 class="text-center header-text"> LeetCode Online Judge </h1>
         <div class="container main-container">
             {+body /}
         </div>

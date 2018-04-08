@@ -305,8 +305,8 @@ app.post('/search', (req, res) => {
     client.connect();
     //console.log(id_number);
 
-    console.log(searchKey);
-    console.log(searchKey);
+    // console.log(searchKey);
+    // console.log(searchKey);
 
     client.query("select oj.pblm_no, oj.pblm_name, oj.judge, oj.code from online_judge oj where oj.pblm_no = $1 ", [searchKey] , (err, results) => {
 

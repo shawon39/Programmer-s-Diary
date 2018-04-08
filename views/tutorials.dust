@@ -66,6 +66,22 @@
 
         <h1 class="header-text2">* In To-Do List, you can save your schedule, delete your schedule when it will be finished </h1>
 
+        <h1 class="header-text2"> * <strong> Supported Online Judge Are Given below </strong> <br>
+            <span>----------------------------------------------------------------</span> CodeForce Online Judge <br>
+            <span>----------------------------------------------------------------</span> URI Online Judge  <br>
+            <span>----------------------------------------------------------------</span> UVA Online Judge<br>
+            <span>----------------------------------------------------------------</span> CodeChef Online Judge<br>
+            <span>----------------------------------------------------------------</span> Light Online Judge<br>
+            <span>----------------------------------------------------------------</span> ACM-ICPC Live Archive<br>
+            <span>----------------------------------------------------------------</span> Google Code Jam<br>
+            <span>----------------------------------------------------------------</span> Hackerrank Online Judge<br>
+            <span>----------------------------------------------------------------</span> Sphere Online Judge<br>
+            <span>----------------------------------------------------------------</span> TopCoder Online Judge<br>
+            <span>----------------------------------------------------------------</span> LeetCode Online Judge<br>
+            <span>----------------------------------------------------------------</span> Timus Online Judge<br>
+
+         </h1>
+
     </div>
 
     </section>
@@ -86,11 +102,11 @@
                 </div>
                 <div class="col-xs-12">
                     <ul class="social">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                        <li><a href="https://www.facebook.com/sh.shawon1"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://twitter.com/shshawon39"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://plus.google.com/100956491598415479807"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="https://www.pinterest.com/s161156953/"><i class="fa fa-pinterest"></i></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCd1S9GkuHJLL13pNfpUCDgg"><i class="fa fa-youtube"></i></a></li>
                     </ul>
                 </div>
 

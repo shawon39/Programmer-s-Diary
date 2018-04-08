@@ -51,7 +51,6 @@
 
         <h1 class="text-center header-text"> PROGRAMMER'S TIMELINE </h1>
 
-
         <!-- <img src="image/coding.gif"> -->
 
         <div class="container main-container">
@@ -153,7 +152,7 @@
 
                                       <div class="form-group">
                                         <label for="SearchProblem">Search Problem</label>
-                                            <input type="number" class="form-control right-side-input" name="pblm_id_no" placeholder="Search problem's Solution">
+                                            <input type="number" class="form-control right-side-input" name="pblm_id_no" placeholder="Enter the problem number">
                                       </div>
                                      <button type="submit" class="btn btn-primary pull-right">Search</button>
                                      <div class="search_pblmm">
@@ -302,11 +301,11 @@
                     </div>
                     <div class="col-xs-12">
                         <ul class="social">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="https://www.facebook.com/sh.shawon1"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/shshawon39"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://plus.google.com/100956491598415479807"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="https://www.pinterest.com/s161156953/"><i class="fa fa-pinterest"></i></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCd1S9GkuHJLL13pNfpUCDgg"><i class="fa fa-youtube"></i></a></li>
                         </ul>
                     </div>
 

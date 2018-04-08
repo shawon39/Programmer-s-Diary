@@ -1,70 +1,67 @@
 {>"timeline" /}
 
 <style>
-h4 {
-    color: #ddd;
-}
+    h4 {
+        color: #ddd;
+    }
 
-.alert {
-    background-color: #3E3B36;
+    .alert {
+        background-color: #3E3B36;
         border: none;
-}
-.alert h4 {
-    color: #ffffff;
-    opacity: 0.8;
-    font-family: Roboto;
-    font-size: 16px;
-}
-.todo-works h4 {
-    background-color: #353634;
-    color: #d1d1d1;
-    opacity: 0.7;
-    border: none;
-    font-size: 14px;
-    font-family:sans-serif;
-}
-.todo-works h4 button {
-    margin-top: -7px;
-    background-color:  #d1d1d1;
-    color: #000;
-    opacity: 0.5;
-}
-.todo-works hr {
-    opacity: 0.3;
-}
+    }
 
-.search_pblm  h4 {
-    background-color: #353634;
-    color: #d1d1d1;
-    opacity: 0.7;
-    border: none;
-    font-size: 14px;
-    font-family:sans-serif;
-}
-.search_pblm h4 button {
-    margin-top: -7px;
-    background-color:  #d1d1d1;
-    color: #000;
-    opacity: 0.8;
-}
-.search_pblm hr {
-    opacity: 0.3;
-}
+    .alert h4 {
+        color: #ffffff;
+        opacity: 0.8;
+        font-family: Roboto;
+        font-size: 16px;
+    }
 
+    .todo-works h4 {
+        background-color: #353634;
+        color: #d1d1d1;
+        opacity: 0.7;
+        border: none;
+        font-size: 14px;
+        font-family: sans-serif;
+    }
 
+    .todo-works h4 button {
+        margin-top: -7px;
+        background-color: #d1d1d1;
+        color: #000;
+        opacity: 0.5;
+    }
+
+    .todo-works hr {
+        opacity: 0.3;
+    }
+
+    .search_pblm h4 {
+        background-color: #353634;
+        color: #d1d1d1;
+        opacity: 0.7;
+        border: none;
+        font-size: 14px;
+        font-family: sans-serif;
+    }
+
+    .search_pblm h4 button {
+        margin-top: -7px;
+        background-color: #d1d1d1;
+        color: #000;
+        opacity: 0.8;
+    }
+
+    .search_pblm hr {
+        opacity: 0.3;
+    }
 </style>
 
-{<body}
 
-    <!-- <div class="alert">
-        <h4> <strong> Status: </strong> {title} </h4>
-    </div> -->
-
-{/body}
 
 {<todo}
-
-        {#data}
+    {#data}
 
         <div class="todo-works">
             <h4 class="list-group-item justify-content-between">
@@ -73,43 +70,39 @@ h4 {
             <hr>
         </div>
 
-        {/data}
+    {/data}
+ {/todo}
 
-{/todo}
 
-<button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#formModalToDo">
-    Add Item
-</button>
 
-{<Search}
-        {#data2}
-            <div class="search_pblm">
-                <h4 class="list-group-item justify-content-between"> {pblm_no} -- {pblm_name} -- {judge}
-                    <button type="button" class="btn btn-default pull-right"  href="#code_{id}" data-toggle="modal" data-target="#CodeView">
-                          Solution
-                    </button>
-                </h4>
-                <hr>
-            </div>
-        {/data2}
+ {<Search}
+     {#data2}
 
-{/Search}
+         <div class="search_pblm">
+             <h4 class="list-group-item justify-content-between"> {pblm_no} -- {pblm_name} -- {judge}
+                 <button type="button" class="btn btn-default pull-right"  href="#code_{id}" aria-controls="code_{id}" data-toggle="modal" data-target="#CodeView">
+                  Solution
+                 </button>
+             </h4>
+             <hr>
+         </div>
+     {/data2}
+ {/Search}
 
-    {#data2}
-        <div class="modal fade" id="CodeView" tabindex="-1" role="dialog" aria-labelledby="formModalLabel">
-          <div class="modal-dialog" role="document">
-         <div class="modal-content">
+ {#data2}
 
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Add ToDo Item</h4>
-            </div>
-            <div class="modal-body" id="judge_{id}">
+     <div class="modal fade" id="CodeView" tabindex="-1" role="dialog" aria-labelledby="formModalLabel">
+         <div class="modal-dialog" role="document">
+             <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                         <h4 style="color:green" class="modal-title" id="myModalLabel">Code Solution</h4>
+                 </div>
+                 <div class="modal-body" id="code_{id}">
+                     <code><pre> {code}</pre> </code>
+                 </div>
+             </div>
+         </div>
+     </div>
 
-                <code><pre> {code}</pre> </code>
-
-            </div>
-        </div>
-      </div>
-    </div>
-    {/data2}
+ {/data2}

@@ -7,12 +7,13 @@
         font-weight: bold;
 
     }
+
     .cf li {
-        background: #4f5b66;
+        background: #3A3732;
         color: #ddd;
         font-family:sans-serif;
-        border-color: #d1d1d1;
         opacity: 0.8;
+        border-color: #787570;
     }
     .cf li span {
         opacity: 0.0;
@@ -22,6 +23,7 @@
         background: #d1d1d1;
         font-weight: bold;
     }
+
 </style>
 
 {<body} <h1 class="title"> {error} </h1>
