@@ -145,7 +145,7 @@
                 <div class="pull-left"> Copyright © <a href="">Logic mind Group</a>.  All right reserved.</div>
                 <div class="pull-right">
                     <ul>
-                        <li><a href="home">Home</a></li>
+                        <li class="active"><a href="home">Home</a></li>
                         <li><a href="tutorials">Tutorials</a></li>
 
                         {@eq key=isAuthenticated value="true" type="Boolean" }
@@ -161,7 +161,7 @@
         <!--/.footer-bottom-->
     </footer>
 
-    <script src="/js/script.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 
 </html>

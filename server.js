@@ -12,9 +12,7 @@ const app = express();
 //
 // main.hello();
 
-const {
-    Client
-} = require('pg');
+const { Client } = require('pg');
 
 const bcrypt = require('bcrypt');
 const saltRounds = 10;

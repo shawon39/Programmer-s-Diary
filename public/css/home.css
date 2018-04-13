@@ -45,6 +45,20 @@ body {
     margin-top: 20px;
 }
 
+#navbar-section div .navbar-nav li:hover {
+    background: #d1d1d1;
+}
+
+#navbar-section div .navbar-nav li a:hover {
+        background: #d1d1d1;
+        color: #000;
+        font-weight: bold;
+}
+
+#navbar-section div .navbar-nav li:active a {
+        color: #fff
+}
+
 /*/////////////////////*/
 
 #main-section .fetures {

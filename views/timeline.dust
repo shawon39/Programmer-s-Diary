@@ -31,11 +31,11 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
 
-                        <li class="active"><a href="home">Home</a></li>
+                        <li><a href="home">Home</a></li>
                         <li><a href="tutorials">Tutorials</a></li>
 
                         {@eq key=isAuthenticated value="true" type="Boolean" }
-                        <li><a href="timeline">Timeline</a></li>
+                        <li class="active"><a href="timeline">Timeline</a></li>
                         <li><a href="logout">Logout</a></li>
                         {:else}
                         <li><a href="signUp">Login / Sign Up</a></li>
@@ -328,11 +328,11 @@
                 <div class="pull-right">
                     <ul>
 
-                        <li class="active"><a href="home">Home</a></li>
+                        <li><a href="home">Home</a></li>
                         <li><a href="tutorials">Tutorials</a></li>
 
                         {@eq key=isAuthenticated value="true" type="Boolean" }
-                        <li><a href="timeline">Timeline</a></li>
+                        <li class="active"><a href="timeline">Timeline</a></li>
                         <li><a href="logout">Logout</a></li>
                         {:else}
                         <li><a href="signUp">Login / Sign Up</a></li>
